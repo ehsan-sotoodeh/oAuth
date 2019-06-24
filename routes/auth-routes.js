@@ -8,7 +8,8 @@ router.get('/login',(req,res)=>{
 //auth logOut
 router.get('/logout',(req,res)=>{
     //haddle with passport
-    res.send('loging out');
+    req.logout();
+    res.redirect('/');
 });
 
 //auth login

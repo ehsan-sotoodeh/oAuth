@@ -1,5 +1,6 @@
 const express = require('express');
 const authRoutes = require('./routes/auth-routes')
+const profileRoutes = require('./routes/profile-routes')
 const PORT_NUMBER = 4000;
 const app = express();
 const passportSetup = require('./config/passport-setup');
@@ -26,6 +27,7 @@ app.use(passport.session());
 
 // set up routes
 app.use('/auth', authRoutes);
+app.use('/profile', profileRoutes);
 
 // create home routes
 app.get('/',(req,res) =>{
